@@ -1,0 +1,61 @@
+name: 'Bulk CWebP'
+description: 'GitHub Action to wrap CWebP features'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: image
+  color: black
+
+##
+#
+inputs:
+  source_directory:
+    description: 'Directory passed to `find` for finding files'
+    required: true
+
+  find_regex:
+    description: 'Regular Expression passed to `find` to limit found files, example "*.png"'
+    required: true
+
+  find_regextype:
+    description: 'Regular Expression type passed to `find` available values are; "emacs", "posix-awk", "posix-basic", "posix-egrep", or "posix-extended"'
+    required: true
+    default: 'emacs'
+
+  exec_cwebp:
+    description: 'Executable name, with optional path, to CWebP executable'
+    required: true
+    default: 'cwebp'
+
+  cwebp_opts:
+    description: 'Additional parameters to pass to `cwebp` for each found file and destination extension'
+    required: false
+
+  destination_name_prefix:
+    description: 'Optional prefix for output file names'
+    required: false
+
+  destination_name_suffix:
+    description: 'Optional suffix for output file names'
+    required: false
+
+  destination_clobber:
+    description: 'Enable clobbering preexisting files by setting to `1`'
+    default: 0
+    required: false
+
+##
+#
+outputs:
+  found:
+    description: 'New-line separated list of file paths found with `find` and provided inputs'
+
+  wrote:
+    description: 'New-line separated list of file paths written by `cwebp` with provided inputs'
+
+  failed:
+    description: 'New-line separated list of file paths `cwebp` failed to write'
+
