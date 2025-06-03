@@ -53,7 +53,7 @@ published to GitHub Pages
 
 ```yaml
       - name: Convert PNG images to WebP
-        uses: gha-utilities/bulk-cwebp@v0.0.1
+        uses: gha-utilities/bulk-cwebp@v0.0.2
         with:
           source_directory: assets/images
           find_regex: '.*.png'
@@ -108,7 +108,7 @@ jobs:
           submodules: 'recursive'
 
       - name: Convert PNG images to WebP
-        uses: gha-utilities/bulk-cwebp@v0.0.1
+        uses: gha-utilities/bulk-cwebp@v0.0.2
         with:
           source_directory: assets/images
           find_regex: '.*.png'
