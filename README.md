@@ -52,7 +52,7 @@ Include, and modify, the following within your repository's workflow that
 published to GitHub Pages
 
 ```yaml
-      - name: Convert PNG impages to WebP
+      - name: Convert PNG images to WebP
         uses: gha-utilities/bulk-cwebp@v0.0.1
         with:
           source_directory: assets/images
@@ -107,7 +107,7 @@ jobs:
           ref: ${{ github.head_ref }}
           submodules: 'recursive'
 
-      - name: Convert PNG impages to WebP
+      - name: Convert PNG images to WebP
         uses: gha-utilities/bulk-cwebp@v0.0.1
         with:
           source_directory: assets/images
