@@ -47,6 +47,11 @@ inputs:
     default: 0
     required: false
 
+  verbose:
+    description: 'Enable `printf` logging by setting non-zero integer value'
+    default: 0
+    required: false
+
 ##
 #
 outputs:
