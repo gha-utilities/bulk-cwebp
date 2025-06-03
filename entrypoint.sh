@@ -88,10 +88,10 @@ fi
 
 _command_find=(find "${_source_directory}" -type f)
 if (( ${#_find_regex} )); then
-	_command_magick+=(-regex "${_find_regex}")
+	_command_find+=(-regex "${_find_regex}")
 fi
 if (( ${#_find_regextype} )); then
-	_command_magick+=(-regextype "${_find_regextype}")
+	_command_find+=(-regextype "${_find_regextype}")
 fi
 _command_find+=(-print0)
 
